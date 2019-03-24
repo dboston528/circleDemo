@@ -40,3 +40,7 @@ jobs:
 
       # run tests!
       - run: yarn test
+
+jobs:
+  test:
+    - run: npm run test:unit
