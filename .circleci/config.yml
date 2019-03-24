@@ -20,6 +20,10 @@ jobs:
       - checkout
 
       - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-node-modules-cache-{{ checksum "package.json" }}
 
       # Checks if project can build successfully 
       - run:
@@ -56,7 +60,9 @@ jobs:
 
     steps:
       - checkout
-      - run: npm install
+      - restore_cache: 
+          key: v1-node-modules-cache-{{ checksum "package.json" }}
+          
       - run: npm run test:unit
 
 workflows:
