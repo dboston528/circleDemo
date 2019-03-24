@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn install
+      - run: npm install
 
       # Checks if project can build successfully 
       - run:
