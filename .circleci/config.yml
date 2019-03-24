@@ -43,4 +43,5 @@ jobs:
 
 jobs:
   test:
-    - run: npm run test:unit
+    steps:
+      - run: npm run test:unit
